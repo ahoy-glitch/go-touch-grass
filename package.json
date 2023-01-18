@@ -1,0 +1,70 @@
+{
+  "name": "go-touch-grass",
+  "displayName": "Go-touch-grass",
+  "description": "A timer to remind you to take a break from programming",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:go-touch-grass.init",
+    "*"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "go-touch-grass.init",
+        "title": "Init"
+      },
+      {
+        "command": "go-touch-grass.timer",
+        "title": "Timer"
+      }
+    ],
+    "configuration": {
+      "title": "Go-touch-grass",
+      "properties": {
+        "go-touch-grass.time": {
+          "type": "string",
+          "default": "0s",
+          "description": "Programming time when you will have a break.",
+          "enum": [
+            "1h",
+            "2h",
+            "3h",
+            "4h",
+            "5h",
+            "6h",
+            "7h",
+            "8h",
+            "9h",
+            "10h"
+          ]
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.74.0",
+    "@vscode/test-electron": "^2.2.0",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "ms": "^2.1.3"
+  }
+}
