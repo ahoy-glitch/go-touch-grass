@@ -3,4 +3,5 @@ node_modules
 #vs code
 .vscode-test/
 *.vsix
+images/icon.png
 vsc-extension-quickstart.md

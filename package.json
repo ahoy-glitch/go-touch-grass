@@ -10,6 +10,7 @@
     "name": "Anjin.js"
   },
   "publisher": "Anjinjs",
+  "icon": "images/icon.png",
   "categories": [
     "Other"
   ],

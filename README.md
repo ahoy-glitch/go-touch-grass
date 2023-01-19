@@ -1,18 +1,12 @@
 # go-touch-grass README
 
-Simple extension to remember you to get a breake
-
-## Features
-
-
-
-\!\[feature X\]\(images/feature-x.png\)
+Simple extension to remember you to get a break
 
 > 
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+`Configure time!`
 
 For example:
 
@@ -23,11 +17,9 @@ This extension contributes the following settings:
 ***
 Example:
 ![a](images/gif.gif)
-<<<<<<< HEAD
->  put the number, like: **2h**
-=======
+
+
 >  put the time, like: **2h**
->>>>>>> 0e06d5a (fix)
 >
 > `Ctrl + shift + P` --> Init or press the button init
 ## Known Issues
