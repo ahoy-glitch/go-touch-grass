@@ -2,7 +2,7 @@
 
 Simple extension to remember you to get a break
 
-> 
+> Want to be a contributor? DM me on discord. Tag: WhoisA.js#0001
 
 ## Extension Settings
 
