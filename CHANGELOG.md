@@ -1,2 +1,7 @@
+## New
+Some adjusts
 
-New command!
+Preferences `settings`
+
+## Coming soon
+Discord server

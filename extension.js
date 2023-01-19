@@ -2,7 +2,15 @@
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require("vscode");
 const ms = require("ms");
+const notifier = require("node-notifier");
+const { readFileSync } = require("fs");
 let timeConfig = vscode.workspace.getConfiguration("go-touch-grass").get("time")
+let notifyConfig = vscode.workspace.getConfiguration("go-touch-grass").get("typeNotify")
+let opt = {
+	title: "Go-touch-grass",
+	message: `It's break time, you have been programming for ${timeConfig} !`,
+	icon: readFileSync(__dirname + "/images/bozo.png")
+}
 
 
 
@@ -22,7 +30,7 @@ function activate(context) {
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
-	console.log('%c[GO-TOUCH-GRASS]', 'color: green');
+	console.log('%c[GO-TOUCH-GRASS] activated', 'color: green');
 	init.command = "go-touch-grass.init"
 	init.text = "Init",
 	init.tooltip = "Initiate the timer."
@@ -42,9 +50,14 @@ function activate(context) {
 		
 
 		vscode.window.showInformationMessage('Initiated time!');
+		
 
 		setTimeout(() => {
-			return vscode.window.showInformationMessage("Break Time!")
+			if (String(notifyConfig) === "Vs code notification") {
+			return vscode.window.showInformationMessage(`It's break time, you have been programming for ${timeConfig} !`)
+			} else if (String(notifyConfig) === "Windows notification") {
+				return notifier.notify(opt);
+			}
 		}, ms(String(timeConfig)))
 	});
 
@@ -69,16 +82,17 @@ function activate(context) {
 
 		let input = String(ipt)
 		
-
-
-		if(!input.endsWith("h")) {
+		if (input === "") {
+			return vscode.window.showErrorMessage("Args error, digit a time, example: \"2h\"")
+		} else if(!input.endsWith("h")) {
 			return vscode.window.showErrorMessage("Args error, expected \"h\" at end")
 		} else if (input.length > 3) {
 			return vscode.window.showErrorMessage("Too long time.")
 		}
 
-		vscode.window.showInformationMessage("Teste passou")
+		vscode.window.showInformationMessage(`Time got set to: ${input}`)
 	    vscode.workspace.getConfiguration("go-touch-grass").update("time", input, true)
+		
 	})
 	
 	
