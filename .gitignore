@@ -3,5 +3,4 @@ node_modules
 #vs code
 .vscode-test/
 *.vsix
-images/
 vsc-extension-quickstart.md

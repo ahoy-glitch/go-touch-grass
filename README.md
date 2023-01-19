@@ -23,7 +23,11 @@ This extension contributes the following settings:
 ***
 Example:
 ![a](images/gif.gif)
+<<<<<<< HEAD
 >  put the number, like: **2h**
+=======
+>  put the time, like: **2h**
+>>>>>>> 0e06d5a (fix)
 >
 > `Ctrl + shift + P` --> Init or press the button init
 ## Known Issues
