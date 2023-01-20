@@ -6,8 +6,8 @@ const notifier = require("node-notifier");
 const { readFileSync } = require("fs");
 let timeConfig = vscode.workspace.getConfiguration("go-touch-grass").get("time")
 let notifyConfig = vscode.workspace.getConfiguration("go-touch-grass").get("typeNotify")
-let opt = {
-	title: "Go-touch-grass",
+let opt = { 
+	title: "Go-touch-grass", // titulo 
 	message: `It's break time, you have been programming for ${timeConfig} !`,
 	icon: readFileSync(__dirname + "/images/bozo.png")
 }
