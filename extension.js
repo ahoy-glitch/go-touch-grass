@@ -43,7 +43,7 @@ function activate(context) {
 	let disposable = vscode.commands.registerCommand('go-touch-grass.init', function () {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
-		// BUGADOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+		// resolvido
 		if (vscode.workspace.getConfiguration("go-touch-grass").get("time") === "0s") {
 			return vscode.window.showWarningMessage("Your settings time is 0s, change to another time!")
 		}
@@ -53,6 +53,7 @@ function activate(context) {
 		
 
 		setTimeout(() => {
+			//	Checando as preferências
 			if (String(notifyConfig) === "Vs code notification") {
 			return vscode.window.showInformationMessage(`It's break time, you have been programming for ${timeConfig} !`)
 			} else if (String(notifyConfig) === "Windows notification") {
